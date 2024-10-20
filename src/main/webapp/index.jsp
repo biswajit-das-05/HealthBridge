@@ -1,268 +1,262 @@
-<%@page import = "com.db.DBConnect"%>
-<%@page import = "java.sql.Connection"%>
-
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
-    <title>Health_Bridge</title>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
-        :root {
-            --primary-color: #28bf96;
-            --primary-color-dark: #209677;
-            --text-dark: #111827;
-            --text-light: #6b7280;
-            --white: #ffffff;
-        }
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            outline: none;
-            border: none;
-            font-size: 1rem;
-            color: var(--white);
-            background-color: var(--primary-color);
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-color-dark);
-        }
-
-        body {
-            font-family: "Roboto", sans-serif;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        nav {
-            padding: 2rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .nav__logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .nav__links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .link a {
-            text-decoration: none;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .link a:hover {
-            color: var(--primary-color);
-        }
-
-        .header {
-            padding: 0 1rem;
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .content h1 {
-            margin-bottom: 1rem;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .content h1 span {
-            font-weight: 400;
-        }
-
-        .content p {
-            margin-bottom: 2rem;
-            color: var(--text-light);
-            line-height: 1.75rem;
-        }
-
-        .image {
-            position: relative;
-            text-align: center;
-            isolation: isolate;
-        }
-
-        .image__bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 450px;
-            width: 450px;
-            background-color: var(--primary-color);
-            border-radius: 100%;
-            z-index: -1;
-        }
-
-        .image img {
-            width: 100%;
-            max-width: 475px;
-        }
-
-        .image__content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-align: left;
-            background-color: var(--white);
-            border-radius: 5px;
-            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .image__content__1 {
-            transform: translate(calc(-50% - 12rem), calc(-50% - 8rem));
-        }
-
-        .image__content__1 span {
-            padding: 10px 12px;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            background-color: #defcf4;
-            border-radius: 100%;
-        }
-
-        .image__content__1 h4 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .image__content__1 p {
-            color: var(--text-light);
-        }
-
-        .image__content__2 {
-            transform: translate(calc(-50% + 8rem), calc(-50% + 10rem));
-        }
-
-        .image__content__2 ul {
-            list-style: none;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .image__content__2 li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .image__content__2 span {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 900px) {
-            .nav__links {
-                display: none;
-            }
-
-            .header {
-                padding: 1rem;
-                grid-template-columns: repeat(1, 1fr);
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .image {
-                grid-area: 1/1/2/2;
-            }
-        }
-    </style>
+    <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HealthBridge</title>
 </head>
 <body>
-<div class="container">
-    <nav>
-        <div class="nav__logo">Health Bridge</div>
+<header>
+    <nav class="section__container nav__container">
+        <div class="nav__logo">Health<span>Bridge</span></div>
         <ul class="nav__links">
-            <li class="link"><a href="AdminLogin.jsp">Admin</a></li>
+            <li class="link"><a href="#about">About Us</a></li>
             <li class="link"><a href="DoctorLogin.jsp">Doctor</a></li>
-            <li class="link"><a href="#">Appointment</a></li>
+
+            <li class="link"><a href="AdminLogin.jsp">Admin</a></li>
+            <li class="link"><a href="#pages">Pages</a></li>
+            <li class="link"><a href="#blog">Blog</a></li>
         </ul>
         <button class="btn"><a href="UserLogin.jsp" style="text-decoration: none; color: inherit;">Patient Registration</a></button>
     </nav>
-    
-   
-    
-    <header class="header">
-        <div class="content">
-            <h1><span>Get Quick</span><br />Medical Services</h1>
+    <div class="section__container header__container" id="home">
+        <div class="header__content">
+            <h1>Providing an Exceptional Patient Experience</h1>
             <p>
-                In today's fast-paced world, access to prompt and efficient medical
-                services is of paramount importance. When faced with a medical
-                emergency or seeking immediate medical attention, the ability to
-                receive quick medical services can significantly impact the outcome
-                of a situation.
+                Welcome, where exceptional patient experiences are our priority.
+                With compassionate care, state-of-the-art facilities, and a
+                patient-centered approach, we're dedicated to your well-being. Trust
+                us with your health and experience the difference.
+            </p>
+            <button class="btn"><a href="#service" style="text-decoration: none; color: inherit;">see services</a></button>
+        </div>
+        <div class="header__form">
+
+        </div>
+    </div>
+</header>
+
+<section class="section__container service__container" id="service">
+    <div class="service__header">
+        <div class="service__header__content">
+            <h2 class="section__header">Our Special service</h2>
+            <p>
+                Beyond simply providing medical care, our commitment lies in
+                delivering unparalleled service tailored to your unique needs.
             </p>
         </div>
-        <div class="image">
-            <span class="image__bg"></span>
-            <img src="../img/doctorimge.png" alt="header image" />
-            <div class="image__content image__content__1">
-                <span><i class="ri-user-3-line"></i></span>
-                <div class="details">
-                    <h4>1520+</h4>
-                    <p>Active Clients</p>
-                </div>
+        <button class="service__btn">Ask A Service</button>
+    </div>
+    <div class="service__grid">
+        <div class="service__card">
+            <span><i class="ri-microscope-line"></i></span>
+            <h4>Laboratory Test</h4>
+            <p>
+                Accurate Diagnostics, Swift Results: Experience top-notch Laboratory
+                Testing at our facility.
+            </p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service__card">
+            <span><i class="ri-mental-health-line"></i></span>
+            <h4>Health Check</h4>
+            <p>
+                Our thorough assessments and expert evaluations help you stay
+                proactive about your health.
+            </p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="service__card">
+            <span><i class="ri-hospital-line"></i></span>
+            <h4>General Dentistry</h4>
+            <p>
+                Experience comprehensive oral care with Dentistry. Trust us to keep
+                your smile healthy and bright.
+            </p>
+            <a href="#">Learn More</a>
+        </div>
+    </div>
+</section>
+<section class="section__container about__container" id="about">
+    <div class="about__content">
+        <h2 class="section__header">About Us</h2>
+        <p>
+            Welcome to our healthcare website, your one-stop destination for
+            reliable and comprehensive health care information. We are committed
+            to promoting wellness and providing valuable resources to empower you
+            on your health journey.
+        </p>
+        <p>
+            Explore our extensive collection of expertly written articles and
+            guides covering a wide range of health topics. From understanding
+            common medical conditions to tips for maintaining a healthy lifestyle,
+            our content is designed to educate, inspire, and support you in making
+            informed choices for your health.
+        </p>
+        <p>
+            Discover practical health tips and lifestyle advice to optimize your
+            physical and mental well-being. We believe that small changes can lead
+            to significant improvements in your quality of life, and we're here to
+            guide you on your path to a healthier and happier you.
+        </p>
+    </div>
+    <div class="about__image">
+        <img src="assets/about.jpg" alt="about" />
+    </div>
+</section>
+
+<section class="section__container why__container" id="blog">
+    <div class="why__image">
+        <img src="assets/choose-us.jpg" alt="why choose us" />
+    </div>
+    <div class="why__content">
+        <h2 class="section__header">Why Choose Us</h2>
+        <p>
+            With a steadfast commitment to your well-being, our team of highly
+            trained healthcare professionals ensures that you receive nothing
+            short of exceptional patient experiences.
+        </p>
+        <div class="why__grid">
+            <span><i class="ri-hand-heart-line"></i></span>
+            <div>
+                <h4>Intensive Care</h4>
+                <p>
+                    Our Intensive Care Unit is equipped with advanced technology and
+                    staffed by team of professionals
+                </p>
             </div>
-            <div class="image__content image__content__2">
-                <ul>
-                    <li>
-                        <span><i class="ri-check-line"></i></span>
-                        Get 20% off on every 1st month
-                    </li>
-                    <li>
-                        <span><i class="ri-check-line"></i></span>
-                        Expert Doctors
-                    </li>
-                </ul>
+            <span><i class="ri-truck-line"></i></span>
+            <div>
+                <h4>Free Ambulance Car</h4>
+                <p>
+                    A compassionate initiative to prioritize your health and
+                    well-being without any financial burden.
+                </p>
+            </div>
+            <span><i class="ri-hospital-line"></i></span>
+            <div>
+                <h4>Medical and Surgical</h4>
+                <p>
+                    Our Medical and Surgical services offer advanced healthcare
+                    solutions to address medical needs.
+                </p>
             </div>
         </div>
-    </header>
-</div>
+    </div>
+</section>
+
+<section class="section__container doctors__container" id="pages">
+    <div class="doctors__header">
+        <div class="doctors__header__content">
+            <h2 class="section__header">Our Special Doctors</h2>
+            <p>
+                We take pride in our exceptional team of doctors, each a specialist
+                in their respective fields.
+            </p>
+        </div>
+        <div class="doctors__nav">
+            <span><i class="ri-arrow-left-line"></i></span>
+            <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+    </div>
+    <div class="doctors__grid">
+        <div class="doctors__card">
+            <div class="doctors__card__image">
+                <img src="assets/doctor-1.jpg" alt="doctor" />
+                <div class="doctors__socials">
+                    <span><i class="ri-instagram-line"></i></span>
+                    <span><i class="ri-facebook-fill"></i></span>
+                    <span><i class="ri-heart-fill"></i></span>
+                    <span><i class="ri-twitter-fill"></i></span>
+                </div>
+            </div>
+            <h4>Dr. Emily Smith</h4>
+            <p>Cardiologist</p>
+        </div>
+        <div class="doctors__card">
+            <div class="doctors__card__image">
+                <img src="assets/doctor-2.jpg" alt="doctor" />
+                <div class="doctors__socials">
+                    <span><i class="ri-instagram-line"></i></span>
+                    <span><i class="ri-facebook-fill"></i></span>
+                    <span><i class="ri-heart-fill"></i></span>
+                    <span><i class="ri-twitter-fill"></i></span>
+                </div>
+            </div>
+            <h4>Dr. James Anderson</h4>
+            <p>Neurosurgeon</p>
+        </div>
+        <div class="doctors__card">
+            <div class="doctors__card__image">
+                <img src="assets/doctor-3.jpg" alt="doctor" />
+                <div class="doctors__socials">
+                    <span><i class="ri-instagram-line"></i></span>
+                    <span><i class="ri-facebook-fill"></i></span>
+                    <span><i class="ri-heart-fill"></i></span>
+                    <span><i class="ri-twitter-fill"></i></span>
+                </div>
+            </div>
+            <h4>Dr. Michael Lee</h4>
+            <p>Dermatologist</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="section__container footer__container">
+        <div class="footer__col">
+            <h3>Health<span>Care</span></h3>
+            <p>
+                We are honored to be a part of your healthcare journey and committed
+                to delivering compassionate, personalized, and top-notch care every
+                step of the way.
+            </p>
+            <p>
+                Trust us with your health, and let us work together to achieve the
+                best possible outcomes for you and your loved ones.
+            </p>
+        </div>
+        <div class="footer__col">
+            <h4>About Us</h4>
+            <p>Home</p>
+            <p>About Us</p>
+            <p>Work With Us</p>
+            <p>Our Blog</p>
+            <p>Terms & Conditions</p>
+        </div>
+        <div class="footer__col">
+            <h4>Services</h4>
+            <p>Search Terms</p>
+            <p>Advance Search</p>
+            <p>Privacy Policy</p>
+            <p>Suppliers</p>
+            <p>Our Stores</p>
+        </div>
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>
+                <i class="ri-map-pin-2-fill"></i> 123, London Bridge Street, London
+            </p>
+            <p><i class="ri-mail-fill"></i> support@care.com</p>
+            <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        <div class="footer__bar__content">
+            <p>We are there for your health support</p>
+            <div class="footer__socials">
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-heart-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
