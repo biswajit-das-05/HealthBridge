@@ -100,7 +100,7 @@
             <button type="submit" class="btn col-md-12 text-white my-bg-color">Login</button>
           </form>
           <div class="registration-section mt-4">
-            <p class="text-center">Don't have an account? <a href="UserSignup.jsp" class="text-decoration-none">Create one</a></p>
+            <p class="text-center">Don't have an account? <a href="signup.jsp" class="text-decoration-none">Create one</a></p>
           </div>
         </div>
       </div>

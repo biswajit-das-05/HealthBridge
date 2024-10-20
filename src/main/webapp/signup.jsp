@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,32 +90,35 @@
                     <p class="fs-4 text-center text-white mt-2">
                         <i class="fa fa-user-plus"></i> Sign Up
                     </p>
+                    <c:if test="${not empty sucmsg}">
+                          <p class="text-center text-success fs-3">${sucmsg}</p>
+                          <c:remove var="sucmsg" scope="session"/>
+                    </c:if>
+
+                    <c:if test="${not empty errormsg}">
+                          <p class="text-center text-danger fs-3">${errormsg}</p>
+                          <c:remove var="errormsg" scope="session"/>
+                    </c:if>
                 </div>
 
                 <div class="card-body">
-                    <form action="userSignup" method="post">
-                        <div class="mb-3">
-                            <label class="form-label">Full Name</label>
-                            <br>
-                            <input name="name" type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <br>
-                            <input name="email" type="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <br>
-                            <input name="password" type="password" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Confirm Password</label>
-                            <br>
-                            <input name="confirm_password" type="password" class="form-control" required>
-                        </div>
-                        <button type="submit" class="btn col-md-12 text-white my-bg-color">Sign Up</button>
+              
+                   <form action="user_register" method="post">
+                     <div class="mb-3">
+                             <label class="form-label">Full Name</label>
+                             <input name="full_name" type="text" class="form-control" required>
+                     </div>
+                     <div class="mb-3">
+                             <label class="form-label">Email address</label>
+                             <input name="email" type="email" class="form-control" required>
+                     </div>
+                     <div class="mb-3">
+                             <label class="form-label">Password</label>
+                             <input name="password" type="password" class="form-control" required>
+                     </div>
+                             <button type="submit" class="btn col-md-12 text-white my-bg-color">Sign Up</button>
                     </form>
+
                 </div>
             </div>
         </div>

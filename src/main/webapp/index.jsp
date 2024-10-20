@@ -1,3 +1,7 @@
+<%@page import = "com.db.DBConnect"%>
+<%@page import = "java.sql.Connection"%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -221,6 +225,9 @@
         </ul>
         <button class="btn"><a href="UserLogin.jsp" style="text-decoration: none; color: inherit;">Patient Registration</a></button>
     </nav>
+    
+   
+    
     <header class="header">
         <div class="content">
             <h1><span>Get Quick</span><br />Medical Services</h1>
