@@ -131,10 +131,6 @@
 </head>
 <body>
 <%@include file="navbar.jsp"%>
-
-<c:if test="${ empty adminObj }">
-    <c:redirect url="../AdminLogin.jsp"></c:redirect>
-</c:if>
 <div class="container p-5">
     <p class="text-center text-danger fs-3">Admin Dashboard</p>
     <div class="row">

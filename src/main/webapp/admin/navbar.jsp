@@ -106,7 +106,6 @@
                             aria-expanded="false">Admin
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="../AdminLogout">Logout</a></li>
                     </ul>
                 </div>
             </form>

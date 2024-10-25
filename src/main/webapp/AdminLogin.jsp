@@ -1,7 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,22 +109,10 @@
                 <div class="card-header text-center text-white my-bg-color">
                     <p class="fs-4 text-center text-white mt-2">
                         <i class="fa fa-universal-access"></i> Admin Login</p>
-
-                    <c:if test="${not empty succMsg }">
-                        <p class="text-center text-success fs-3">${succMsg}</p>
-                        <c:remove var="succMsg" scope="session" />
-                    </c:if>
-
-                    <c:if test="${not empty errormsg }">
-                        <p class="text-center text-danger fs-5">${errormsg}</p>
-                        <c:remove var="errorMsg" scope="session" />
-                    </c:if>
-
-
                 </div>
                 <div class="card-body">
                     <!-- Form that submits to a servlet or another JSP page -->
-                    <form action="AdminLogin" method="post">
+                    <form action="AdminLoginServlet" method="post">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
                             <input name="email" type="email" placeholder="Enter Email" class="form-control">
