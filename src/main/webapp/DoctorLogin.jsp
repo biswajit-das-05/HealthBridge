@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,39 +17,42 @@
             background-color: #f4f4f4;
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 15px 20px;
+            color: white;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
         .container {
-            max-width: 100%;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .card {
-            background-color: #fff;
+            background-color: #28a745;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-top: 50px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: -50px; /* Centers vertically with navbar */
         }
 
         .card-header {
             text-align: center;
-            background-color: #343a40;
-            border-radius: 10px;
+            background-color: #28a745; /* Green background for Doctor Login */
+            border-radius: 10px 10px 0 0;
             padding: 20px;
-        }
-
-        .my-bg-color {
-            background-color: #007bff; /* Blue background for buttons and header */
-        }
-
-        .my-card {
-            border: none;
-        }
-
-        .text-white {
-            color: white;
+            color: #ffffff; /* White text for contrast */
         }
 
         .fs-4 {
@@ -86,43 +88,38 @@
             cursor: pointer;
             border: none;
             border-radius: 10px;
+            background-color: #007bff; /* Original blue color for button */
+            color: white; /* White text for contrast */
             transition: background-color 0.3s ease;
+            width: 100%;
         }
 
-        button {
-            width: 400px;
-            background-color: #0000ff;
-        }
-
-        button:hover {
-            background-color: #ff0000;
+        .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-<div class="container p-5">
-    <div class="row">
-        <div class="col-md-4 offset-md-4">
-            <div class="card my-card">
-                <div class="card-header text-center text-white my-bg-color">
-                    <p class="fs-4 text-center text-white mt-2">
-                        <i class="fa fa-universal-access"></i> Doctor Login
-                    </p>
+<%@include file="navbar.jsp" %>
+<div class="container">
+    <div class="card my-card">
+        <div class="card-header text-center">
+            <p class="fs-4">
+                <i class="fa fa-universal-access"></i> Doctor Login
+            </p>
+        </div>
+        <div class="card-body">
+            <form action="../Doctor/Doctor_Dashboard.html" method="get">
+                <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input name="email" type="email" placeholder="Enter Email" class="form-control" required>
                 </div>
-                <div class="card-body">
-                    <form action="../Doctor/Doctor_Dashboard.html" method="get">
-                        <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input name="email" type="email" placeholder="Enter Email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input name="password" type="password" placeholder="Enter password" class="form-control" required>
-                        </div>
-                        <button type="submit" class="btn my-bg-color text-white col-md-12">Submit</button>
-                    </form>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input name="password" type="password" placeholder="Enter password" class="form-control" required>
                 </div>
-            </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
         </div>
     </div>
 </div>

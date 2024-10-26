@@ -12,8 +12,8 @@
 
     <style>
         .navbar {
-            background-color: #4CAF50; 
-            border-bottom: 2px solid #388E3C; 
+            background-color: #4CAF50;
+            border-bottom: 2px solid #388E3C;
         }
 
         .navbar .navbar-brand {
@@ -42,9 +42,9 @@
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28155, 155, 155, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
 
-        
+
         .dropdown-toggle {
-            color: #4CAF50; 
+            color: #4CAF50;
             background-color: white;
             border: 1px solid #4CAF50;
             padding: 0.5rem 1rem;
@@ -63,11 +63,11 @@
 
 
         .dropdown-menu .dropdown-item {
-            color: #4CAF50; 
+            color: #4CAF50;
         }
 
         .dropdown-menu .dropdown-item:hover {
-            background-color: #C8E6C9; 
+            background-color: #C8E6C9;
             color: white;
         }
 
@@ -101,12 +101,6 @@
             </ul>
             <form class="d-flex">
                 <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">Admin
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="../AdminLogout">Logout</a></li>
 
                     </ul>
                 </div>

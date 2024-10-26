@@ -74,6 +74,7 @@
   </style>
 </head>
 <body>
+<%@include file ="navbar.jsp" %>
 
 <!-- User Login -->
 <div class="container p-5">

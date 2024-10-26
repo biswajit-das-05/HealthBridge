@@ -80,6 +80,7 @@
     </style>
 </head>
 <body>
+<%@include file ="navbar.jsp" %>
 
 <!-- User Sign Up -->
 <div class="container p-5">
@@ -116,7 +117,7 @@
                              <label class="form-label">Password</label>
                              <input name="password" type="password" class="form-control" required>
                      </div>
-                             <button type="submit" class="btn col-md-12 text-white my-bg-color">Sign Up</button>
+                             <button type="submit" class="btn col-md-12 text-white my-bg-color ">Sign Up</button>
                     </form>
 
                 </div>

@@ -74,6 +74,10 @@
         form.d-flex {
             margin-left: auto;
         }
+        .nav-item {
+            list-style: none;
+        }
+
 
         @media (min-width: 992px) {
             .navbar-nav .nav-item .nav-link {
@@ -98,17 +102,24 @@
                 <li class="nav-item"><a class="nav-link active" href="doctor.jsp">APPOINTMENT</a></li>
                 <li class="nav-item"><a class="nav-link active" href="view_doctor.jsp">VIEW APPOINTMENT</a></li>
             </ul>
-            <form class="d-flex">
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">Patient
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+            <c:if test="${not empty userObj }">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ${userObj.fullName}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                         <li><a class="dropdown-item" href="../ChangePassword">Change Password</a></li>
                         <li><a class="dropdown-item" href="../UserLogout">Logout</a></li>
                     </ul>
-                </div>
+                </li>
+            </c:if>
+
+
+
+
+
+        </div>
             </form>
         </div>
     </div>
