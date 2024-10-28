@@ -39,22 +39,23 @@
         }
 
         .card {
-            background-color: #28a745;
+            background-color: #28a745 ;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
-            margin-top: -50px; /* Centers vertically with navbar */
+            margin-top: -50px;
         }
 
         .card-header {
             text-align: center;
-            background-color: #28a745; /* Green background for Doctor Login */
             border-radius: 10px 10px 0 0;
             padding: 20px;
-            color: #ffffff; /* White text for contrast */
+            color: #ffffff;
         }
-
+        .text-white {
+            background-color: #28a745 !important;
+        }
         .fs-4 {
             font-size: 1.5rem;
         }
@@ -88,14 +89,14 @@
             cursor: pointer;
             border: none;
             border-radius: 10px;
-            background-color: #007bff; /* Original blue color for button */
-            color: white; /* White text for contrast */
+            background-color: #007bff;
+            color: white;
             transition: background-color 0.3s ease;
             width: 100%;
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #0056b3 !important;
         }
     </style>
 </head>
@@ -103,7 +104,7 @@
 <%@include file="navbar.jsp" %>
 <div class="container">
     <div class="card my-card">
-        <div class="card-header text-center">
+        <div class="card-header text-center text-white">
             <p class="fs-4">
                 <i class="fa fa-universal-access"></i> Doctor Login
             </p>
@@ -118,7 +119,7 @@
                     <label class="form-label">Password</label>
                     <input name="password" type="password" placeholder="Enter password" class="form-control" required>
                 </div>
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn text-white">Submit</button>
             </form>
         </div>
     </div>

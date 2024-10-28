@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Bridge</title>
+    <title>HealthBridge</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -78,7 +78,6 @@
             list-style: none;
         }
 
-
         @media (min-width: 992px) {
             .navbar-nav .nav-item .nav-link {
                 margin-right: 2rem;
@@ -90,7 +89,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.jsp"><i class="fas fa-clinic-medical"></i> Health_Bridge</a>
+        <a class="navbar-brand" href="index.jsp"><i class="fas fa-clinic-medical"></i> HealthBridge</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,23 +101,16 @@
                 <li class="nav-item"><a class="nav-link active" href="doctor.jsp">APPOINTMENT</a></li>
                 <li class="nav-item"><a class="nav-link active" href="view_doctor.jsp">VIEW APPOINTMENT</a></li>
             </ul>
-
-            <c:if test="${not empty userObj }">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ${userObj.fullName}
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+<c:if test="${not empty userObj }">
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    ${userObj.fullName}
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                         <li><a class="dropdown-item" href="../ChangePassword">Change Password</a></li>
                         <li><a class="dropdown-item" href="../UserLogout">Logout</a></li>
                     </ul>
-                </li>
-            </c:if>
-
-
-
-
-
+    </c:if>
         </div>
             </form>
         </div>

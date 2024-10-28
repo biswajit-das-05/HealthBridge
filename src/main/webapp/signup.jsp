@@ -32,6 +32,7 @@
         }
 
         .form-control {
+
             border-radius: 5px;
             border: 1px solid #ced4da;
             padding: 10px;
@@ -51,7 +52,7 @@
         }
 
         .text-white {
-            color: #fff;
+            background-color: #28a745 !important;
         }
 
         .text-center {

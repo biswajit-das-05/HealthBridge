@@ -136,6 +136,15 @@
     <c:redirect url="../AdminLogin.jsp"></c:redirect>
 </c:if>
 <div class="container p-5">
+    <c:if test="${not empty errorMsg}">
+    <p class="fs-3 text-center text-danger">${errorMsg}</p>
+        <c:remove var="errorMsg" scope="session" />
+    </c:if>
+    <c:if test="${not empty succMsg}">
+    <div class="fs-3 text-center text-success" role="alert">${succMsg}</div>
+        <c:remove var="succMsg" scope="session" />
+    </c:if>
+<div class="container p-5">
     <p class="text-center text-danger fs-3">Admin Dashboard</p>
     <div class="row">
         <div class="col-md-4">
@@ -168,8 +177,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-4 mt-2">
-            <a href="specialist.html" class="card-link">
+        <div class="col-md-4 mt-2"data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div class="card my-card">
                     <div class="card-body text-center text-danger">
                         <i class="fa-solid fa-user-doctor fa-3x"></i><br>
@@ -177,6 +185,41 @@
                     </div>
                 </div>
             </a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="../addSpecialist" method="post">
+
+                    <div class="form-group">
+                        <label>Enter Specialist Name</label> <input type="text"
+                                                                    name="specName" class="form-control">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Close</button>
+
+            </div>
         </div>
     </div>
 </div>

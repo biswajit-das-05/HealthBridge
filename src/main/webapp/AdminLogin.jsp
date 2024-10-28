@@ -66,7 +66,7 @@
         }
 
         .text-white {
-            color: white;
+            background-color: #28a745 !important;
         }
 
         .fs-4 {
