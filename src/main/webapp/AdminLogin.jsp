@@ -8,7 +8,7 @@
     <title>Admin Login</title>
 
     <style>
-        /* CSS code inlined */
+
         * {
             margin: 0;
             padding: 0;

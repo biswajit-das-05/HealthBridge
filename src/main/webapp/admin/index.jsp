@@ -157,6 +157,17 @@
                 </div>
             </a>
         </div>
+
+            <div class="col-md-4">
+                <a href="doctor.html" class="card-link">
+                    <div class="card my-card">
+                        <div class="card-body text-center text-danger">
+                            <i class="fa-solid fa-user-doctor fa-3x"></i><br>
+                            <p class="fs-4">View Doctor</p>24
+                        </div>
+                    </div>
+                </a>
+            </div>
         <div class="col-md-4">
             <a href="patient.html" class="card-link">
                 <div class="card my-card">

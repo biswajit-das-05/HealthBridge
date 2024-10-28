@@ -29,16 +29,16 @@ public class ChangePassword extends HttpServlet {
 
             if (dao.changePassword(uid, newPassword)) {
                 session.setAttribute("succMsg", "Password Change Sucessfully");
-                resp.sendRedirect("change_password.jsp");
+                resp.sendRedirect("changepassword.jsp");
 
             } else {
                 session.setAttribute("errorMsg", "Something wrong on server");
-                resp.sendRedirect("change_password.jsp");
+                resp.sendRedirect("changepassword.jsp");
             }
 
         } else {
             session.setAttribute("errorMsg", "Old Password Incorrect");
-            resp.sendRedirect("change_password.jsp");
+            resp.sendRedirect("changepassword.jsp");
         }
 
     }

@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.db.DBConnect"%>
 <%@page import="com.dao.SpecialistDao"%>
+<%@ page import="com.entity.Specialist" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>

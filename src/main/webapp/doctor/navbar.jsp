@@ -74,7 +74,9 @@
         form.d-flex {
             margin-left: auto;
         }
-
+        .nav-item {
+            list-style: none;
+        }
 
         @media (min-width: 992px) {
             .navbar-nav .nav-item .nav-link {
@@ -96,23 +98,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="index.jsp">HOME</a></li>
-                <li class="nav-item"><a class="nav-link active" href="Doctor.jsp">DOCTOR</a></li>
-                <li class="nav-item"><a class="nav-link active" href="viewDoctor.jsp">VIEW DOCTOR</a></li>
-                <li class="nav-item"><a class="nav-link active" href="patient.jsp">PATIENT</a></li>
+                <li class="nav-item"><a class="nav-link active" href="doctor.jsp">PATIENT</a></li>
             </ul>
             <form class="d-flex">
                 <div class="dropdown">
                     <button class="btn btn-light dropdown-toggle" type="button"
                             id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">Admin
+                            aria-expanded="false">${doctObj.fullName}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="../AdminLogout">Logout</a></li>
+                        <li><a class="dropdown-item" href="../doctorLogout">Logout</a></li>
 
                     </ul>
                 </div>
             </form>
-        </div>
+    </div>
     </div>
 </nav>
 
