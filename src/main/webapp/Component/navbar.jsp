@@ -95,30 +95,44 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="index.jsp">HOME</a></li>
-                <li class="nav-item"><a class="nav-link active" href="doctor.jsp">APPOINTMENT</a></li>
-                <li class="nav-item"><a class="nav-link active" href="view_doctor.jsp">VIEW APPOINTMENT</a></li>
-            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <c:if test="${empty userObj }">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="AdminLogin.jsp">
+                <i class="fas fa-sign-in-alt"></i>ADMIN</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                    href="DoctorLogin.jsp">DOCTOR</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                    href="user_appointment.jsp">APPOINTMENT</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                    href="UserLogin.jsp">USER</a></li>
+        </c:if>
+
+
+
 <c:if test="${not empty userObj }">
-    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    ${userObj.fullName}
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="user_appointment.jsp">APPOINTMENT</a></li>
+    <li class="nav-item"><a class="nav-item-active" aria-current="page" href="view_appointment.jsp">VIEW APPOINTMENT</a></li>
+
+    <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user"></i> ${userobj.fullname}
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="../ChangePassword">Change Password</a></li>
                         <li><a class="dropdown-item" href="../UserLogout">Logout</a></li>
-                    </ul>
+          </ul>
+        </div>
     </c:if>
-        </div>
-            </form>
-        </div>
+
+        </ul>
+    </div>
     </div>
 </nav>
-
-<!-- dependencies of bootstrap js-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
