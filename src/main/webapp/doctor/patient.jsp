@@ -126,7 +126,7 @@
                    <td>
                      <%
                      %>if ("Pending".equals(ap.getStatus())) {
-                       <a href="#" class="btn btn-success btn-sm">Comment</a>
+                       <a href="comment.jsp?id=<%ap.getId()%>" class="btn btn-success btn-sm">Comment</a>
 
                        } else {
 

@@ -31,11 +31,11 @@
             background-repeat: no-repeat;
         }
     </style>
-    <%@include file="../component/allcss.jsp"%>
+    <%@include file="../Component/allCss.jsp"%>
 </head>
 <body>
 <c:if test="${empty doctObj }">
-    <c:redirect url="../doctor_login.jsp"></c:redirect>
+    <c:redirect url="../DoctorLogin.jsp"></c:redirect>
 </c:if>
 
 

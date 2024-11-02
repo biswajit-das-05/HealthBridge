@@ -87,15 +87,15 @@ public class AppointmentDAO {
     }
 
 
-    public List<Appointment> getAllAppointmentByDoctorLogin(int doctorId)
+    public Appointment getAppointmentById(int Id)
     {
-        List<Appointment> list = new ArrayList<>();
-        Appointment ap;
+
+        Appointment ap = new Appointment();
 
         try {
-            String sql = "select * from appointment where user_id=?";
+            String sql = "select * from appointment where Id=?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, doctorId);
+            ps.setInt(1, Id);
             ResultSet rs = ps.executeQuery();
             while (rs.next())
             {
@@ -112,7 +112,7 @@ public class AppointmentDAO {
                 ap.setDoctorId(rs.getInt(10));
                 ap.setAddress(rs.getString(11));
                 ap.setStatus(rs.getString(12));
-                list.add(ap);
+
 
             }
 
@@ -121,6 +121,27 @@ public class AppointmentDAO {
             e.printStackTrace();
         }
 
-        return list;
+        return ap;
+    }
+
+    public boolean updateCommentStatus(int id, int doctId, String comm) {
+        boolean f = false;
+        try {
+            String sql = "update appointment set status=? where id=? and doctor_id=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, comm);
+            ps.setInt(2, id);
+            ps.setInt(3, doctId);
+
+            int i = ps.executeUpdate();
+            if (i == 1) {
+                f = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
     }
 }
