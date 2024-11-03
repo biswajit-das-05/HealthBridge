@@ -17,4 +17,9 @@ public class DBConnect {
 		}
 		return conn;
 
-	}}
+	}
+
+    public static Connection getconn() {
+        return null;
+    }
+}
