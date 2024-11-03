@@ -1,3 +1,4 @@
+<%@ page import="com.dao.DoctorDao" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,19 +102,20 @@
     }
 </script>
 <main>
+    Doctor d = (Doctor) session.getAttribute("DoctorObj")
+        DoctorDao dao = new DoctorDao(DBConnect.getconn());
     <div class="dashboard-container">
         <div class="dashboard-box" onclick="redirectTo('doctor.html')">
             <div class="icon"><i class="fa fa-user-md"></i></div>
             <div class="content">
-                <h2>Doctor</h2>
-                <p>10</p>
+                <h2>Doctor</h2><%= dao.countDoctor()%>
             </div>
         </div>
 
         <div class="dashboard-box" onclick="redirectTo('appointments.html')">
             <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
             <div class="content">
-                <h2>Total Appointments</h2>
+                <h2>Total Appointments</h2><%= dao.countAppointmentByDocotrId(d.getId())%>
                 <p>2</p>
             </div>
         </div>
