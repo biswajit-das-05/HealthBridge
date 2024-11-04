@@ -123,7 +123,7 @@
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="../ChangePassword">Change Password</a></li>
+                        <li><a class="dropdown-item" href="change_password.jsp">Change Password</a></li>
                         <li><a class="dropdown-item" href="../UserLogout">Logout</a></li>
           </ul>
         </div>

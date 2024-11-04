@@ -11,7 +11,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Insert title here</title>
-    <%@include file="../component/allcss.jsp"%>
+    <%@include file="../Component/allCss.jsp"%>
     <style type="text/css">
         .paint-card {
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -51,7 +51,7 @@
                     <th><%=ap.getFullName()%></th>
                     <td><%=ap.getGender()%></td>
                     <td><%=ap.getAge()%></td>
-                    <td><%=ap.getAppoinDate()%></td>
+                    <td><%=ap.getAppointmentDate()%></td>
                     <td><%=ap.getEmail()%></td>
                     <td><%=ap.getPhNo()%></td>
                     <td><%=ap.getDiseases()%></td>

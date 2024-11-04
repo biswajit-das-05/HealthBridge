@@ -146,7 +146,7 @@
     <div class="fs-3 text-center text-success" role="alert">${succMsg}</div>
         <c:remove var="succMsg" scope="session" />
     </c:if>
-    <% DoctorDao dao = new DoctorDao(DBConnect.getconn()); %>
+    <% DoctorDao dao = new DoctorDao(DBConnect.getConn()); %>
 <div class="container p-5">
     <p class="text-center text-danger fs-3">Admin Dashboard</p>
     <div class="row">
