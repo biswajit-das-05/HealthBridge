@@ -128,4 +128,11 @@ public class Appointment {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getAppoinDate() {
+        return "";
+    }
+
+    public void setAppoinDate(String string) {
+    }
 }

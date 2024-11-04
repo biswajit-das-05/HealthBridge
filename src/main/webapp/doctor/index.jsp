@@ -1,4 +1,4 @@
-<%@ page import="com.dao.DoctorDao" %>
+<%@ page import="com.dao.DoctorDao, com.entity.Doctor, com.db.DBConnect" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard</title>
     <style>
+        /* Your existing styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -83,16 +84,47 @@
             color: #2c7c5d;
         }
     </style>
-        </head>
+</head>
 <body>
-<%@include file="navbar.jsp"%>
+<%@ include file="navbar.jsp" %>
 <header>
-        <h1>Doctor Dashboard</h1>
+    <h1>Doctor Dashboard</h1>
 </header>
-<c:if test="${ empty doctObj }">
-    <c:redirect url="../DoctorLogin.jsp"></c:redirect>
-</c:if>
+
+<%
+    Doctor d = (Doctor) session.getAttribute("DoctorObj");
+    if (d == null) {
+        response.sendRedirect("../DoctorLogin.jsp");
+        return;
+    }
+    DoctorDao dao = new DoctorDao(DBConnect.getconn());
+%>
+
+<main>
+    <div class="dashboard-container">
+        <div class="dashboard-box" onclick="redirectTo('doctor.html')">
+            <div class="icon"><i class="fa fa-user-md"></i></div>
+            <div class="content">
+                <h2>Doctor</h2>
+                <p><%= dao.countDoctor() %></p>
+            </div>
+        </div>
+
+        <div class="dashboard-box" onclick="redirectTo('appointments.html')">
+            <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
+            <div class="content">
+                <h2>Total Appointments</h2>
+                <p><%= dao.countAppointmentByDocotrId(d.getId()) %></p>
+            </div>
+        </div>
+    </div>
+</main>
+
 <script>
+    function redirectTo(url) {
+        window.location.href = url;
+    }
+
     function editProfile() {
         window.location.href = 'edit_doctor_profile.html';
     }
@@ -101,25 +133,5 @@
         window.location.href = '../WEB-INF/Landing_page.html';
     }
 </script>
-<main>
-    Doctor d = (Doctor) session.getAttribute("DoctorObj")
-        DoctorDao dao = new DoctorDao(DBConnect.getconn());
-    <div class="dashboard-container">
-        <div class="dashboard-box" onclick="redirectTo('doctor.html')">
-            <div class="icon"><i class="fa fa-user-md"></i></div>
-            <div class="content">
-                <h2>Doctor</h2><%= dao.countDoctor()%>
-            </div>
-        </div>
-
-        <div class="dashboard-box" onclick="redirectTo('appointments.html')">
-            <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
-            <div class="content">
-                <h2>Total Appointments</h2><%= dao.countAppointmentByDocotrId(d.getId())%>
-                <p>2</p>
-            </div>
-        </div>
-    </div>
-</main>
 </body>
 </html>
