@@ -43,7 +43,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Date of Birth</label>
-                            <input name="dateOfBirth" type="date" placeholder="Enter DOB" class="form-control"value="<%=d.getDob()%>">
+                            <input name="dob" type="date" placeholder="Enter DOB" class="form-control"value="<%=d.getDob()%>">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Qualification</label>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Phone</label>
-                            <input name="phone" type="text" placeholder="Enter mobile number" class="form-control"value="<%=d.getMobNo()%>">
+                            <input name="mobno" type="text" placeholder="Enter mobile number" class="form-control"value="<%=d.getMobNo()%>">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>

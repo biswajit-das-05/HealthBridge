@@ -217,6 +217,7 @@
 <body>
 <%@include file="navbar.jsp"%>
 <div class="container">
+    <%@include file="allCss.jsp"%>
 
     <header class="header">
         <div class="content">

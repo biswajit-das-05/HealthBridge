@@ -119,14 +119,14 @@
         <div class="card-header text-center text-white my-bg-color">
             <p class="fs-4 text-center text-white mt-2">
                 <i class="fa fa-universal-access"></i> Admin Login</p>
-            <c:if test="${not empty succMsg }">
+            <c:if test="${not empty succmsg }">
                 <p class="text-center text-success fs-3">${succMsg}</p>
                 <c:remove var="succMsg" scope="session" />
             </c:if>
 
-            <c:if test="${not empty errorMsg }">
-                <p class="text-center text-danger fs-5">${errorMsg}</p>
-                <c:remove var="errorMsg" scope="session" />
+            <c:if test="${not empty errormsg }">
+                <p class="text-center text-danger fs-5">${errormsg}</p>
+                <c:remove var="errormsg" scope="session" />
             </c:if>
         </div>
 

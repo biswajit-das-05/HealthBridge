@@ -58,17 +58,9 @@
   </style>
 </head>
 <body>
-     <%@include file="navbar.jsp"%>
-  <header>
-  <h1>Doctor Dashboard</h1>
-</header>
-     <%@include file="navbar.jsp"%>
-     <header>
-       <h1>Doctor Dashboard</h1>
-     </header>
-     <c:if test="${ empty doctObj }">
-       <c:redirect url="../DoctorLogin.jsp"></c:redirect>
-     </c:if>
+<jsp:include page="navbar.jsp" />
+
+
 
      <div class="container p-3">
        <div class="row">
@@ -105,7 +97,7 @@
 
                  <%
 
-                   Doctor d = (Doctor) session.getAttribute("doctorObj");
+                   Doctor d = (Doctor) session.getAttribute("DoctorObj");
 
                    //DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());
                    AppointmentDAO appDAO = new AppointmentDAO(DBConnect.getConn());
@@ -117,26 +109,14 @@
                    <th><%=ap.getFullName()%></th>
                    <td><%=ap.getGender()%></td>
                    <td><%=ap.getAge()%></td>
-                   <td><%=ap.getAppointmentDate()%></td>
+                   <td><%=ap.getAppointDate()%></td>
                    <td><%=ap.getEmail()%></td>
                    <td><%=ap.getPhNo()%></td>
                    <td><%=ap.getDiseases()%></td>
                    <td><%=ap.getStatus()%></td>
 
                    <td>
-                     <%
-                     %>if ("Pending".equals(ap.getStatus())) {
-                       <a href="comment.jsp?id=<%ap.getId();%>" class="btn btn-success btn-sm">Comment</a>
-
-                       } else {
-
-                       <a href="#" class="btn btn-success btn-sm disabled"><i
-                             class="fa fa-comment"></i> Comment / Prescription</a>
-
-
-                       }<%
-                   %>
-
+                       <a href="comment.jsp?id=<%=ap.getId()%>" class="btn btn-success btn-sm">Comment</a>
 
                    </td>
 

@@ -34,7 +34,7 @@
 <div class="container p-1">
     <div class="row">
         <div class="col-md-6 p-2">
-            <img alt="" src="img/doctorimge.png">
+            <img alt="" src="../img/doctorimge.png">
         </div>
 
 

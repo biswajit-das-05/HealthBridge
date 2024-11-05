@@ -86,6 +86,10 @@
     </style>
 </head>
 <body>
+<c:if test="${empty DoctorObj}">
+    <c:redirect url="../DoctorLogin.jsp" />
+</c:if>
+<c:out value="${DoctorObj}" />
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
@@ -98,7 +102,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="index.jsp">HOME</a></li>
-                <li class="nav-item"><a class="nav-link active" href="patient.jsp">PATIENT</a></li>
+                <li class="nav-item"><a class="nav-link active" href="patient.jsp" target="_self">PATIENT</a></li>
             </ul>
             <form class="d-flex">
                 <div class="dropdown">

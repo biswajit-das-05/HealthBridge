@@ -206,7 +206,7 @@ public class DoctorDao {
         return i;
     }
 
-    public int countAppointmentByDocotrId(int did) {
+    public int countAppointmentByDoctorId(int did) {
         int i = 0;
         try {
             String sql = "select * from appointment where doctor_id=?";
@@ -224,7 +224,7 @@ public class DoctorDao {
         return i;
     }
 
-    public int countUSer() {
+    public int countUser() {
         int i = 0;
         try {
             String sql = "select * from user_dtls";

@@ -130,13 +130,15 @@ public class Appointment {
     public void setStatus(String status) {
         this.status = status;
     }
-
     public String getAppointDate() {
-        return "";
+        return appointDate;
     }
 
-    public void setAppointDate(String string) {
+    public void setAppointDate(String appointDate) {
+        this.appointDate = appointDate;
     }
+
+
 
     public Object getAppointmentDate() {
         return null;

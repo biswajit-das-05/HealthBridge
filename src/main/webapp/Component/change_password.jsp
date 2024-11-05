@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 04-11-2024
-  Time: 07:59
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -14,7 +8,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Insert title here</title>
-    <%@include file="Component/allCss.jsp"%>
+    <%@include file="allCss.jsp"%>
 
     <style type="text/css">
         .paint-card {
@@ -23,7 +17,7 @@
     </style>
 </head>
 <body>
-<%@include file="Component/navbar.jsp"%>
+<%@include file="navbar.jsp"%>
 
 <c:if test="${ empty userObj }">
     <c:redirect url="UserLogin.jsp"></c:redirect>
@@ -44,9 +38,10 @@
                     <c:remove var="errorMsg" scope="session" />
                 </c:if>
                 <div class="card-body">
-                    <form action="userChangePassword" method="post">
+                    <form class="row g-3" action="${pageContext.request.contextPath}/userChangePassword" method="post">
                         <div class="mb-3">
-                            <label>Enter New Password</label> <input type="text"
+                            <label>Enter New Password</label>
+                            <input type="text"
                                                                      name="newPassword" class="form-control" required>
                         </div>
 

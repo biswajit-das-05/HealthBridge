@@ -51,7 +51,7 @@
                     <th><%=ap.getFullName()%></th>
                     <td><%=ap.getGender()%></td>
                     <td><%=ap.getAge()%></td>
-                    <td><%=ap.getAppointmentDate()%></td>
+                    <td><%=ap.getAppointDate()%></td>
                     <td><%=ap.getEmail()%></td>
                     <td><%=ap.getPhNo()%></td>
                     <td><%=ap.getDiseases()%></td>

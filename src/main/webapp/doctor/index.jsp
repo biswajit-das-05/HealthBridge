@@ -1,3 +1,6 @@
+<%@ page import="com.db.DBConnect" %>
+<%@ page import="com.dao.DoctorDao" %>
+<%@ page import="com.entity.Doctor" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,31 +81,33 @@
 <header>
     <h1>Doctor Dashboard</h1>
 </header>
-<c:if test="${ empty DoctorObj }">
-    <c:redirect url="../DoctorLogin.jsp"></c:redirect>
-</c:if>
-<script>
-    function editProfile() {
-        window.location.href = 'edit_doctor_profile.html';
-    }
-    function logout() {
-        window.location.href = '../WEB-INF/Landing_page.html';
-    }
-</script>
+<%
+    Doctor d = (Doctor) session.getAttribute("DoctorObj");
+    DoctorDao dao = new DoctorDao(DBConnect.getConn());
+%>
+<%--<c:if test="${ empty DoctorObj }">--%>
+<%--    <c:redirect url="../DoctorLogin.jsp"></c:redirect>--%>
+<%--</c:if>--%>
+<%--<script>--%>
+<%--    function editProfile() {--%>
+<%--        window.location.href = 'edit_doctor_profile.html';--%>
+<%--    }--%>
+<%--    function logout() {--%>
+<%--        window.location.href = '../WEB-INF/Landing_page.html';--%>
+<%--    }--%>
+<%--</script>--%>
 <main>
     <div class="dashboard-container">
         <div class="dashboard-box" onclick="redirectTo('doctor.html')">
             <div class="icon"><i class="fa fa-user-md"></i></div>
             <div class="content">
-                <h2>Doctor</h2>
-                <p>10</p>
+                <h2>Patient</h2><%= dao.countAppointmentByDoctorId(d.getId())%>
             </div>
         </div>
         <div class="dashboard-box" onclick="redirectTo('appointments.html')">
             <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
             <div class="content">
-                <h2>Total Appointments</h2>
-                <p>2</p>
+                <h2>Total Appointments</h2><%= dao.countAppointmentByDoctorId(d.getId())%>
             </div>
         </div>
     </div>

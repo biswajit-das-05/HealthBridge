@@ -99,27 +99,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-        <c:if test="${empty userObj }">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="AdminLogin.jsp">
-                <i class="fas fa-sign-in-alt"></i>ADMIN</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                    href="DoctorLogin.jsp">DOCTOR</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                    href="../userAppointment.jsp">APPOINTMENT</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                    href="UserLogin.jsp">USER</a></li>
-        </c:if>
+<%--        <c:if test="${empty userObj }">--%>
+<%--            <li class="nav-item"><a class="nav-link active" aria-current="page" href="AdminLogin.jsp">--%>
+<%--                <i class="fas fa-sign-in-alt"></i>ADMIN</a></li>--%>
+<%--            <li class="nav-item"><a class="nav-link active" aria-current="page"--%>
+<%--                                    href="DoctorLogin.jsp">DOCTOR</a></li>--%>
+<%--            <li class="nav-item"><a class="nav-link active" aria-current="page"--%>
+<%--                                    href="../userAppointment.jsp">APPOINTMENT</a></li>--%>
+<%--            <li class="nav-item"><a class="nav-link active" aria-current="page"--%>
+<%--                                    href="UserLogin.jsp">USER</a></li>--%>
+<%--        </c:if>--%>
 
 
 
 <c:if test="${not empty userObj }">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="../userAppointment.jsp">APPOINTMENT</a></li>
-    <li class="nav-item"><a class="nav-item-active" aria-current="page" href="../view_appointment.jsp">VIEW APPOINTMENT</a></li>
+        <a class="nav-link active" aria-current="page" href="userAppointment.jsp">APPOINTMENT</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="view_appointment.jsp">VIEW APPOINTMENT</a></li>
 
     <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-circle-user"></i> ${userobj.fullname}
+            <i class="fa-solid fa-circle-user"></i> ${userbj.fullname}
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">

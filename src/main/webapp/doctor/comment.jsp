@@ -22,19 +22,12 @@
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
         }
 
-        .backImg {
-            background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-            url("../img/hospital.jpg");
-            height: 20vh;
-            width: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+
     </style>
     <%@include file="../Component/allCss.jsp"%>
 </head>
 <body>
-<c:if test="${empty doctObj }">
+<c:if test="${empty DoctorObj }">
     <c:redirect url="../DoctorLogin.jsp"></c:redirect>
 </c:if>
 

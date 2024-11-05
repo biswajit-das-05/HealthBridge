@@ -151,7 +151,7 @@
     <p class="text-center text-danger fs-3">Admin Dashboard</p>
     <div class="row">
         <div class="col-md-4">
-            <a href="doctor.html" class="card-link">
+            <a href="Doctor.jsp" class="card-link">
                 <div class="card my-card">
                     <div class="card-body text-center text-danger">
                         <i class="fa-solid fa-user-doctor fa-3x"></i><br>
@@ -162,11 +162,11 @@
         </div>
 
             <div class="col-md-4">
-                <a href="doctor.html" class="card-link">
+                <a href="viewDoctor.jsp" class="card-link">
                     <div class="card my-card">
                         <div class="card-body text-center text-danger">
                             <i class="fa-solid fa-user-doctor fa-3x"></i><br>
-                            <p class="fs-4">View Doctor</p>24
+                            <p class="fs-4">View Doctor</p><%= dao.countDoctor()%>
                         </div>
                     </div>
                 </a>
@@ -176,13 +176,13 @@
                 <div class="card my-card">
                     <div class="card-body text-center text-danger">
                         <i class="fas fa-user-circle fa-3x"></i><br>
-                        <p class="fs-4">Patient</p>4555
+                        <p class="fs-4">Patient</p><%= dao.countUser()%>
                     </div>
                 </div>
             </a>
         </div>
         <div class="col-md-4">
-            <a href="appointments.html" class="card-link">
+            <a href="patient.jsp" class="card-link">
                 <div class="card my-card">
                     <div class="card-body text-center text-danger">
                         <i class="fa-solid fa-calendar-check fa-3x"></i><br>

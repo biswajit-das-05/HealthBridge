@@ -2,7 +2,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.db.DBConnect"%>
 <%@page import="com.dao.SpecialistDao"%>
-<%@ page import="com.entity.Specialist" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -20,12 +19,12 @@
     <%@include file="../Component/allCss.jsp"%>
 </head>
 <body>
-<c:if test="${empty doctObj }">
+<c:if test="${empty DoctorObj }">
     <c:redirect url="../DoctorLogin.jsp"></c:redirect>
 </c:if>
 
 
-<%@include file="navbar.jsp"%>
+<jsp:include page="navbar.jsp" />
 
 <div class="container p-4">
     <div class="row">
@@ -52,7 +51,7 @@
                             <label>Enter Old Password</label> <input type="text"
                                                                      name="oldPassword" class="form-control" required>
                         </div>
-                        <input type="hidden" value="${doctObj.id }" name="uid">
+                        <input type="hidden" value="${DoctorObj.id }" name="uid">
                         <button class="btn btn-success col-md-12">Change
                             Password</button>
                     </form>
@@ -77,24 +76,24 @@
                         <div class="mb-3">
                             <label class="form-label">Full Name</label> <input type="text"
                                                                                required name="fullname" class="form-control"
-                                                                               value="${doctObj.fullName }">
+                                                                               value="${DoctorObj.fullName }">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">DOB</label> <input type="date"
                                                                          required name="dob" class="form-control"
-                                                                         value="${doctObj.dob }">
+                                                                         value="${DoctorObj.dob }">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Qualification</label> <input required
                                                                                    name="qualification" type="text" class="form-control"
-                                                                                   value="${doctObj.qualification }">
+                                                                                   value="${DoctorObj.qualification }">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Specialist</label> <select name="spec"
                                                                                  required class="form-control">
-                            <option>${doctObj.specialist }</option>
+                            <option>${DoctorObj.specialist }</option>
 
                             <%
                                 SpecialistDao dao = new SpecialistDao(DBConnect.getConn());
@@ -113,15 +112,15 @@
                         <div class="mb-3">
                             <label class="form-label">Email</label> <input type="text"
                                                                            readonly required name="email" class="form-control"
-                                                                           value="${doctObj.email }">
+                                                                           value="${DoctorObj.email }">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Mob No</label> <input type="text"
                                                                             required name="mobno" class="form-control"
-                                                                            value="${doctObj.mobNo }">
+                                                                            value="${DoctorObj.mobNo }">
                         </div>
-                        <input type="hidden" name="id" value="${doctObj.id }">
+                        <input type="hidden" name="id" value="${DoctorObj.id }">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
