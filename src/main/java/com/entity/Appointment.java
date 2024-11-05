@@ -6,7 +6,7 @@ public class Appointment {
     private String fullName;
     private String gender;
     private String age;
-    private String appointmentDate;
+    private String appointDate;
     private String email;
     private String phNo;
     private String diseases;
@@ -14,24 +14,26 @@ public class Appointment {
     private String address;
     private String status;
 
-    public Appointment(int userId, String fullname, String gender, String appointent_date, String email, String phone, String diseases, int doctor_Id, String address, String pending) {
+    public Appointment() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-  public Appointment() {
+    public Appointment(int userId, String fullName, String gender, String age, String appointDate, String email,
+                       String phNo, String diseases, int doctorId, String address, String status) {
         super();
         this.userId = userId;
         this.fullName = fullName;
         this.gender = gender;
         this.age = age;
-        this.appointmentDate = appointmentDate;
+        this.appointDate = appointDate;
         this.email = email;
         this.phNo = phNo;
         this.diseases = diseases;
         this.doctorId = doctorId;
         this.address = address;
         this.status = status;
-  }
+    }
 
     public int getId() {
         return id;
@@ -73,12 +75,12 @@ public class Appointment {
         this.age = age;
     }
 
-    public String getAppointmentDate() {
-        return appointmentDate;
+    public String getAppoinDate() {
+        return appointDate;
     }
 
-    public void setAppointmentDate(String appointmentDate) {
-        this.appointmentDate = appointmentDate;
+    public void setAppoinDate(String appoinDate) {
+        this.appointDate = appoinDate;
     }
 
     public String getEmail() {
@@ -129,10 +131,14 @@ public class Appointment {
         this.status = status;
     }
 
-    public String getAppoinDate() {
+    public String getAppointDate() {
         return "";
     }
 
-    public void setAppoinDate(String string) {
+    public void setAppointDate(String string) {
+    }
+
+    public Object getAppointmentDate() {
+        return null;
     }
 }

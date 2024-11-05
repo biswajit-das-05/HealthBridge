@@ -105,7 +105,7 @@
             <li class="nav-item"><a class="nav-link active" aria-current="page"
                                     href="DoctorLogin.jsp">DOCTOR</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                    href="user_appointment.jsp">APPOINTMENT</a></li>
+                                    href="../userAppointment.jsp">APPOINTMENT</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page"
                                     href="UserLogin.jsp">USER</a></li>
         </c:if>
@@ -114,8 +114,8 @@
 
 <c:if test="${not empty userObj }">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="user_appointment.jsp">APPOINTMENT</a></li>
-    <li class="nav-item"><a class="nav-item-active" aria-current="page" href="view_appointment.jsp">VIEW APPOINTMENT</a></li>
+        <a class="nav-link active" aria-current="page" href="../userAppointment.jsp">APPOINTMENT</a></li>
+    <li class="nav-item"><a class="nav-item-active" aria-current="page" href="../view_appointment.jsp">VIEW APPOINTMENT</a></li>
 
     <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

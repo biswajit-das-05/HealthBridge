@@ -1,4 +1,3 @@
-<%@ page import="com.dao.DoctorDao, com.entity.Doctor, com.db.DBConnect" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Dashboard</title>
     <style>
-        /* Your existing styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
         }
-
         header {
             color: green;
             display: flex;
@@ -21,11 +18,9 @@
             padding: 10px 20px;
             align-items: center;
         }
-
         .header-title h1 {
             margin: 0;
         }
-
         .logout-btn button {
             background-color: #fff;
             border: 1px solid #2c7c5d;
@@ -34,19 +29,16 @@
             cursor: pointer;
             border-radius: 5px;
         }
-
         .logout-btn button:hover {
             background-color: #2c7c5d;
             color: white;
         }
-
         .dashboard-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 50px;
         }
-
         .dashboard-box {
             background-color: white;
             border: 2px solid #ddd;
@@ -63,22 +55,18 @@
             transition: transform 0.3s;
             cursor: pointer;
         }
-
         .dashboard-box:hover {
             transform: scale(1.05);
         }
-
         .icon {
             font-size: 40px;
             color: #2c7c5d;
         }
-
         .content h2 {
             margin: 10px 0 5px;
             font-size: 18px;
             color: #333;
         }
-
         .content p {
             font-size: 20px;
             color: #2c7c5d;
@@ -86,52 +74,38 @@
     </style>
 </head>
 <body>
-<%@ include file="navbar.jsp" %>
+<%@include file="navbar.jsp"%>
 <header>
     <h1>Doctor Dashboard</h1>
 </header>
-
-<%
-    Doctor d = (Doctor) session.getAttribute("DoctorObj");
-    if (d == null) {
-        response.sendRedirect("../DoctorLogin.jsp");
-        return;
+<c:if test="${ empty DoctorObj }">
+    <c:redirect url="../DoctorLogin.jsp"></c:redirect>
+</c:if>
+<script>
+    function editProfile() {
+        window.location.href = 'edit_doctor_profile.html';
     }
-    DoctorDao dao = new DoctorDao(DBConnect.getconn());
-%>
-
+    function logout() {
+        window.location.href = '../WEB-INF/Landing_page.html';
+    }
+</script>
 <main>
     <div class="dashboard-container">
         <div class="dashboard-box" onclick="redirectTo('doctor.html')">
             <div class="icon"><i class="fa fa-user-md"></i></div>
             <div class="content">
                 <h2>Doctor</h2>
-                <p><%= dao.countDoctor() %></p>
+                <p>10</p>
             </div>
         </div>
-
         <div class="dashboard-box" onclick="redirectTo('appointments.html')">
             <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
             <div class="content">
                 <h2>Total Appointments</h2>
-                <p><%= dao.countAppointmentByDocotrId(d.getId()) %></p>
+                <p>2</p>
             </div>
         </div>
     </div>
 </main>
-
-<script>
-    function redirectTo(url) {
-        window.location.href = url;
-    }
-
-    function editProfile() {
-        window.location.href = 'edit_doctor_profile.html';
-    }
-
-    function logout() {
-        window.location.href = '../WEB-INF/Landing_page.html';
-    }
-</script>
 </body>
 </html>

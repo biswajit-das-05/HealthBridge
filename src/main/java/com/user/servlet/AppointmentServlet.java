@@ -1,9 +1,5 @@
 package com.user.servlet;
 
-import com.dao.AppointmentDAO;
-import com.db.DBConnect;
-import com.entity.Appointment;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -13,38 +9,44 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/userAppointment")
+import com.dao.AppointmentDAO;
+import com.db.DBConnect;
+import com.entity.Appointment;
+
+@WebServlet("/addAppointment")
 public class AppointmentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int userId = Integer.parseInt(req.getParameter("userId"));
+        int userId = Integer.parseInt(req.getParameter("userid"));
         String fullname = req.getParameter("fullname");
         String gender = req.getParameter("gender");
-        String appointent_date = req.getParameter("appointment_date");
+        String age = req.getParameter("age");
+        String appoint_date = req.getParameter("appoint_date");
         String email = req.getParameter("email");
-        String phone = req.getParameter("phone");
+        String phno = req.getParameter("phno");
         String diseases = req.getParameter("diseases");
-        int doctor_Id = Integer.parseInt(req.getParameter("doct"));
+        int doctor_id = Integer.parseInt(req.getParameter("doct"));
         String address = req.getParameter("address");
 
-
-        Appointment ap = new Appointment(userId, fullname, gender, appointent_date, email, phone, diseases, doctor_Id, address, "Pending");
+        Appointment ap = new Appointment(userId, fullname, gender, age, appoint_date, email, phno, diseases, doctor_id,
+                address, "Pending");
 
         AppointmentDAO dao = new AppointmentDAO(DBConnect.getConn());
         HttpSession session = req.getSession();
 
-
         if (dao.addAppointment(ap)) {
+            System.out.println("Appointment added");
             session.setAttribute("succMsg", "Appointment Sucessfully");
-            resp.sendRedirect("user_appointment.jsp");
+            resp.sendRedirect("userAppointment.jsp");
         } else {
+            System.out.println("Appointment not added"
+            );
             session.setAttribute("errorMsg", "Something wrong on server");
-            resp.sendRedirect("user_appointment.jsp");
+            resp.sendRedirect("userAppointment.jsp");
         }
+
     }
 
 }
-
-

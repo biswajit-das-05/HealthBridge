@@ -28,7 +28,7 @@ public class AppointmentDAO {
             ps.setString(2, ap.getFullName());
             ps.setString(3, ap.getGender());
             ps.setString(4, ap.getAge());
-            ps.setString(5, ap.getAppoinDate());
+            ps.setString(5, ap.getAppointDate());
             ps.setString(6, ap.getEmail());
             ps.setString(7, ap.getPhNo());
             ps.setString(8, ap.getDiseases());
@@ -66,7 +66,7 @@ public class AppointmentDAO {
                 ap.setFullName(rs.getString(3));
                 ap.setGender(rs.getString(4));
                 ap.setAge(rs.getString(5));
-                ap.setAppoinDate(rs.getString(6));
+                ap.setAppointDate(rs.getString(6));
                 ap.setEmail(rs.getString(7));
                 ap.setPhNo(rs.getString(8));
                 ap.setDiseases(rs.getString(9));
@@ -101,7 +101,7 @@ public class AppointmentDAO {
                 ap.setFullName(rs.getString(3));
                 ap.setGender(rs.getString(4));
                 ap.setAge(rs.getString(5));
-                ap.setAppoinDate(rs.getString(6));
+                ap.setAppointDate(rs.getString(6));
                 ap.setEmail(rs.getString(7));
                 ap.setPhNo(rs.getString(8));
                 ap.setDiseases(rs.getString(9));
@@ -136,7 +136,7 @@ public class AppointmentDAO {
                 ap.setFullName(rs.getString(3));
                 ap.setGender(rs.getString(4));
                 ap.setAge(rs.getString(5));
-                ap.setAppoinDate(rs.getString(6));
+                ap.setAppointDate(rs.getString(6));
                 ap.setEmail(rs.getString(7));
                 ap.setPhNo(rs.getString(8));
                 ap.setDiseases(rs.getString(9));
@@ -191,7 +191,7 @@ public class AppointmentDAO {
                 ap.setFullName(rs.getString(3));
                 ap.setGender(rs.getString(4));
                 ap.setAge(rs.getString(5));
-                ap.setAppoinDate(rs.getString(6));
+                ap.setAppointDate(rs.getString(6));
                 ap.setEmail(rs.getString(7));
                 ap.setPhNo(rs.getString(8));
                 ap.setDiseases(rs.getString(9));
