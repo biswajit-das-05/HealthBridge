@@ -84,6 +84,9 @@
     </style>
 </head>
 <body>
+<c:if test="${empty adminObj}">
+    <c:redirect url="../AdminLogin.jsp" />
+</c:if>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">

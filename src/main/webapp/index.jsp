@@ -37,9 +37,11 @@
             </p>
             <button class="btn"><a href="#service" style="text-decoration: none; color: inherit;">see services</a></button>
         </div>
-        <div class="header__form">
+            <div class="col-md-3 p-3">
+                <img alt="" src="img/doctorimge.png">
+            </div>
 
-        </div>
+
     </div>
 </header>
 
@@ -52,7 +54,6 @@
                 delivering unparalleled service tailored to your unique needs.
             </p>
         </div>
-        <button class="service__btn">Ask A Service</button>
     </div>
     <div class="service__grid">
         <div class="service__card">
@@ -62,7 +63,6 @@
                 Accurate Diagnostics, Swift Results: Experience top-notch Laboratory
                 Testing at our facility.
             </p>
-            <a href="#">Learn More</a>
         </div>
         <div class="service__card">
             <span><i class="ri-mental-health-line"></i></span>
@@ -71,7 +71,6 @@
                 Our thorough assessments and expert evaluations help you stay
                 proactive about your health.
             </p>
-            <a href="#">Learn More</a>
         </div>
         <div class="service__card">
             <span><i class="ri-hospital-line"></i></span>
@@ -80,7 +79,6 @@
                 Experience comprehensive oral care with Dentistry. Trust us to keep
                 your smile healthy and bright.
             </p>
-            <a href="#">Learn More</a>
         </div>
     </div>
 </section>
@@ -108,13 +106,13 @@
         </p>
     </div>
     <div class="about__image">
-        <img src="assets/about.jpg" alt="about" />
+        <img src="img/about.jpeg" alt="about" />
     </div>
 </section>
 
 <section class="section__container why__container" id="blog">
     <div class="why__image">
-        <img src="assets/choose-us.jpg" alt="why choose us" />
+        <img src="img/doctors team.jpg" alt="why choose us" />
     </div>
     <div class="why__content">
         <h2 class="section__header">Why Choose Us</h2>
@@ -161,15 +159,12 @@
                 in their respective fields.
             </p>
         </div>
-        <div class="doctors__nav">
-            <span><i class="ri-arrow-left-line"></i></span>
-            <span><i class="ri-arrow-right-line"></i></span>
-        </div>
+
     </div>
     <div class="doctors__grid">
         <div class="doctors__card">
             <div class="doctors__card__image">
-                <img src="assets/doctor-1.jpg" alt="doctor" />
+                <img src="img/doctor-1.jpg" alt="doctor" />
                 <div class="doctors__socials">
                     <span><i class="ri-instagram-line"></i></span>
                     <span><i class="ri-facebook-fill"></i></span>
@@ -177,12 +172,12 @@
                     <span><i class="ri-twitter-fill"></i></span>
                 </div>
             </div>
-            <h4>Dr. Emily Smith</h4>
+            <h4>Dr.Strange</h4>
             <p>Cardiologist</p>
         </div>
         <div class="doctors__card">
             <div class="doctors__card__image">
-                <img src="assets/doctor-2.jpg" alt="doctor" />
+                <img src="img/doctor2.avif" alt="doctor" />
                 <div class="doctors__socials">
                     <span><i class="ri-instagram-line"></i></span>
                     <span><i class="ri-facebook-fill"></i></span>
@@ -195,7 +190,7 @@
         </div>
         <div class="doctors__card">
             <div class="doctors__card__image">
-                <img src="assets/doctor-3.jpg" alt="doctor" />
+                <img src="img/doctor3.avif" alt="doctor" />
                 <div class="doctors__socials">
                     <span><i class="ri-instagram-line"></i></span>
                     <span><i class="ri-facebook-fill"></i></span>

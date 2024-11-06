@@ -89,7 +89,6 @@
 <c:if test="${empty DoctorObj}">
     <c:redirect url="../DoctorLogin.jsp" />
 </c:if>
-<c:out value="${DoctorObj}" />
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">

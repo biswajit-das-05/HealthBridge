@@ -105,7 +105,9 @@
             </div>
         </div>
         <div class="dashboard-box" onclick="redirectTo('appointments.html')">
-            <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
+            <div class="icon"><i class="fa fa-calendar-check-o"></i>
+                <i class="fas fa-calendar-check fa-1x"></i><br>
+            </div>
             <div class="content">
                 <h2>Total Appointments</h2><%= dao.countAppointmentByDoctorId(d.getId())%>
             </div>
