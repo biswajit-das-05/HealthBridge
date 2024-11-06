@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -10,8 +8,7 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>HealthBridge</title>
-</head>
+    <title>HealthBridge</title></head>
 <body>
 <header>
     <nav class="section__container nav__container">
@@ -37,9 +34,9 @@
             </p>
             <button class="btn"><a href="#service" style="text-decoration: none; color: inherit;">see services</a></button>
         </div>
-            <div class="col-md-3 p-3">
-                <img alt="" src="img/doctorimge.png">
-            </div>
+        <div class="col-md-3 p-3">
+            <img alt="" src="img/doctorimge.png">
+        </div>
 
 
     </div>
@@ -172,7 +169,7 @@
                     <span><i class="ri-twitter-fill"></i></span>
                 </div>
             </div>
-            <h4>Dr.Strange</h4>
+            <h4>Dr. Smith</h4>
             <p>Cardiologist</p>
         </div>
         <div class="doctors__card">
@@ -245,7 +242,7 @@
     </div>
     <div class="footer__bar">
         <div class="footer__bar__content">
-            <p>We are there for your health support</p>
+            <p>We are there for your help in continue a healthy life </p>
             <div class="footer__socials">
                 <span><i class="ri-instagram-line"></i></span>
                 <span><i class="ri-facebook-fill"></i></span>

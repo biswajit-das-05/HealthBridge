@@ -116,6 +116,8 @@
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="userAppointment.jsp">APPOINTMENT</a></li>
     <li class="nav-item"><a class="nav-link active" aria-current="page" href="view_appointment.jsp">VIEW APPOINTMENT</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../menu.jsp">shop</a></li>
+
 
     <div class="dropdown">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
