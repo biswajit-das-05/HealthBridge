@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.entity.Product" %>
@@ -6,15 +7,15 @@
 <%
     // Sample product data
     List<Product> products = new ArrayList<>();
-    products.add(new Product(1, "Paracetamol", 10.5, "images/paracetamol.jpg"));
-    products.add(new Product(2, "Ibuprofen", 25.0, "images/ibuprofen.jpg"));
-    products.add(new Product(3, "Amoxicillin", 19.0, "images/amoxicillin.jpg"));
-    products.add(new Product(4, "Zerodol-SP", 20.0, "images/zerodol-sp.jpg"));
-    products.add(new Product(5, "Levocetirizine", 29.0, "image/levocetirizine.jpg"));
-    products.add(new Product(6, "Metformin", 35.0, "images/metformin.jpg"));
-    products.add(new Product(7, "Atorvastatin", 40.0, "images/atorvastatin.jpg"));
-    products.add(new Product(8, "Lisinopril", 50.0, "images/lisinopril.jpg"));
-    products.add(new Product(9, "Gabapentin", 60.0, "images/gabapentin.jpg"));
+    products.add(new Product(1, "Paracetamol", 10.5, "img/Paracetamol.jpg"));
+    products.add(new Product(2, "Ibuprofen", 25.0, "img/Ibuprofen.jpeg"));
+    products.add(new Product(3, "Amoxicillin", 19.0, "img/Amoxicillin.jpeg"));
+    products.add(new Product(4, "Zerodol-SP", 20.0, "img/zerodol-sp.jpeg"));
+    products.add(new Product(5, "Levocetirizine", 29.0, "img/levocetirizine.jpeg"));
+    products.add(new Product(6, "Metformin", 35.0, "img/metformin.jpeg"));
+    products.add(new Product(7, "Atorvastatin", 40.0, "img/atorvastatin.jpeg"));
+    products.add(new Product(8, "Lisinopril", 50.0, "img/lisinopril.jpeg"));
+    products.add(new Product(9, "Gabapentin", 60.0, "img/gabapentin.jpeg"));
 
     session.setAttribute("products", products);
 %>
@@ -25,7 +26,6 @@
     <meta charset="UTF-8">
     <title>Medicine Shop - Menu</title>
     <style>
-        /* Reset and general styles */
         * {
             margin: 0;
             padding: 0;
@@ -52,7 +52,6 @@
             text-align:center;
         }
 
-        /* Product card styling */
         .product-container {
             display: flex;
             flex-wrap: wrap;
@@ -89,7 +88,6 @@
             margin-bottom: 15px;
         }
 
-        /* Button styling */
         .product-card button {
             padding: 10px 20px;
             background-color: #007bff;
@@ -114,15 +112,18 @@
     <div class="product-card">
         <img src="<%= product.getImagePath() %>" alt="<%= product.getName() %>">
         <h2><%= product.getName() %></h2>
-        <p>Price: ₹<%= product.getPrice() %></p> <!-- Rupee symbol with price -->
+        <p>Price: ₹<%= product.getPrice() %></p>
         <form action="CartServlet" method="post">
-            <input type="hidden" name="action" value="addToCart"> <!-- Add action parameter -->
+            <input type="hidden" name="action" value="addToCart">
             <input type="hidden" name="productId" value="<%= product.getId() %>">
             <button type="submit">Add to Cart</button>
         </form>
-
     </div>
     <% } %>
+
+
+
+
 </div>
 
 

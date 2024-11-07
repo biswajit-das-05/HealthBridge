@@ -1,8 +1,12 @@
 package com.user.servlet;
 
 import com.entity.Product;
+import com.util.DBUtil;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -30,19 +34,38 @@ public class CartServlet extends HttpServlet {
                 cart = new ArrayList<>();
             }
 
-            // Find product by ID and add to cart
             for (Product product : products) {
                 if (product.getId() == productId) {
                     cart.add(product);
+                    addProductToCartDatabase(session.getId(), productId); // Store in DB
                     break;
                 }
             }
 
             session.setAttribute("cart", cart);
-            // Redirect to cart.jsp after adding to cart
             response.sendRedirect("cart.jsp");
         }
 
-        // Additional actions (like placing an order) can go here
     }
-}
+
+    private void addProductToCartDatabase(String sessionId, int productId) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = DBUtil.getConnection();
+            String sql = "INSERT INTO order_list (name, product, location, phone) VALUES (?, ?, ?, ?)";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, sessionId);
+            stmt.setInt(2, productId);
+
+            stmt.setString(3, "location");
+            stmt.setString(4, "phone");
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.closeConnection(conn);
+        }
+    }
+    }
+

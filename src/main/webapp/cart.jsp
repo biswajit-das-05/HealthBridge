@@ -138,6 +138,7 @@
 </head>
 <body>
 
+
 <h1>Your Cart</h1>
 <div id="cartContent">
     <table>
@@ -150,9 +151,7 @@
         <tr>
             <td><%= product.getName() %></td>
             <td>₹ <%= product.getPrice() %></td>
-            <td>
-                <button onclick="removeFromCart(<%= product.getId() %>)" class="remove-button">Remove</button>
-            </td>
+
         </tr>
         <% } %>
     </table>
