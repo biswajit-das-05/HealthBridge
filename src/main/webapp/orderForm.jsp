@@ -79,8 +79,12 @@
 <form action="CartServlet" method="post">
     <input type="hidden" name="action" value="placeOrder">
 
-    <label for="name">Name:</label>
+    <label for="name">Full Name:</label>
     <input type="text" id="name" name="name" required>
+
+
+    <label for="product">Product Name:</label>
+    <input type="text" id="product" name="product" required>
 
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" required>

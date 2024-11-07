@@ -1,10 +1,10 @@
 package com.user.servlet;
 
+import com.entity.Product;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.entity.Product;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +15,13 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/CartServlet")
 public class CartServlet extends HttpServlet {
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         HttpSession session = request.getSession();
 
         // Adding product to cart
-        if (action == null) {
+        if ("addToCart".equals(action)) {
             int productId = Integer.parseInt(request.getParameter("productId"));
             List<Product> products = (List<Product>) session.getAttribute("products");
             List<Product> cart = (List<Product>) session.getAttribute("cart");
@@ -38,18 +39,10 @@ public class CartServlet extends HttpServlet {
             }
 
             session.setAttribute("cart", cart);
+            // Redirect to cart.jsp after adding to cart
             response.sendRedirect("cart.jsp");
         }
 
-        // Placing the order
-        else if (action.equals("placeOrder")) {
-            String location = request.getParameter("location");
-            String phone = request.getParameter("phone");
-
-            // For now, just clear the cart and simulate an order placement
-            session.removeAttribute("cart");
-            response.getWriter().println("Order placed successfully! COD payment will be collected at " + location);
-            response.getWriter().println("Phone: " + phone);
-        }
+        // Additional actions (like placing an order) can go here
     }
 }

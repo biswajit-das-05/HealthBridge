@@ -15,6 +15,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/doctor/navbar.jsp" value="file://$PROJECT_DIR$/src/main/webapp/doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/doctor/patient.jsp" value="file://$PROJECT_DIR$/src/main/webapp/doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/orderForm.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/user_appointment.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/view_appointment.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
       </map>

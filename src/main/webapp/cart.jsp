@@ -112,8 +112,9 @@
             })
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById("cartContent").innerHTML = data; // Update cart content
-                });
+                    document.getElementById("cartContent").innerHTML = data; // Update cart content with new HTML
+                })
+                .catch(error => console.error('Error:', error));
         }
 
         // AJAX function to reset the cart
@@ -127,10 +128,12 @@
             })
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById("cartContent").innerHTML = data; // Update cart content
-                });
+                    document.getElementById("cartContent").innerHTML = data; // Update cart content with new HTML
+                })
+                .catch(error => console.error('Error:', error));
         }
     </script>
+
 
 </head>
 <body>

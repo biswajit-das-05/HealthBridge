@@ -116,7 +116,7 @@
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="userAppointment.jsp">APPOINTMENT</a></li>
     <li class="nav-item"><a class="nav-link active" aria-current="page" href="view_appointment.jsp">VIEW APPOINTMENT</a></li>
-    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../menu.jsp">shop</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../menu.jsp">MEDICINE SHOP</a></li>
 
 
     <div class="dropdown">

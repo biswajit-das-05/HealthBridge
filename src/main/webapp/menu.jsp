@@ -7,8 +7,14 @@
     // Sample product data
     List<Product> products = new ArrayList<>();
     products.add(new Product(1, "Paracetamol", 10.5, "images/paracetamol.jpg"));
-    products.add(new Product(2, "Ibuprofen", 12.0, "images/ibuprofen.jpg"));
-    products.add(new Product(3, "Amoxicillin", 15.0, "images/amoxicillin.jpg"));
+    products.add(new Product(2, "Ibuprofen", 25.0, "images/ibuprofen.jpg"));
+    products.add(new Product(3, "Amoxicillin", 19.0, "images/amoxicillin.jpg"));
+    products.add(new Product(4, "Zerodol-SP", 20.0, "images/zerodol-sp.jpg"));
+    products.add(new Product(5, "Levocetirizine", 29.0, "image/levocetirizine.jpg"));
+    products.add(new Product(6, "Metformin", 35.0, "images/metformin.jpg"));
+    products.add(new Product(7, "Atorvastatin", 40.0, "images/atorvastatin.jpg"));
+    products.add(new Product(8, "Lisinopril", 50.0, "images/lisinopril.jpg"));
+    products.add(new Product(9, "Gabapentin", 60.0, "images/gabapentin.jpg"));
 
     session.setAttribute("products", products);
 %>
@@ -37,8 +43,13 @@
 
         h1 {
             color: #333;
+            margin-top: 20px;
             margin-bottom: 20px;
             font-size: 24px;
+            background-color: #ff00ff;
+            height:40px;
+            width:1500px;
+            text-align:center;
         }
 
         /* Product card styling */
@@ -50,9 +61,9 @@
         }
 
         .product-card {
-            border: 1px solid #ddd;
+            border: 3px solid #ddd;
             padding: 16px;
-            width: 220px;
+            width: 420px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -91,7 +102,7 @@
         }
 
         .product-card button:hover {
-            background-color: #0056b3;
+            background-color: #ff0000;
         }
     </style>
 </head>
@@ -105,12 +116,15 @@
         <h2><%= product.getName() %></h2>
         <p>Price: ₹<%= product.getPrice() %></p> <!-- Rupee symbol with price -->
         <form action="CartServlet" method="post">
+            <input type="hidden" name="action" value="addToCart"> <!-- Add action parameter -->
             <input type="hidden" name="productId" value="<%= product.getId() %>">
             <button type="submit">Add to Cart</button>
         </form>
+
     </div>
     <% } %>
 </div>
+
 
 </body>
 </html>
