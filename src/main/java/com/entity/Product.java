@@ -1,4 +1,3 @@
-// Product.java
 package com.entity;
 
 public class Product {

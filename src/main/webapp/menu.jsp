@@ -5,7 +5,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    // Sample product data
     List<Product> products = new ArrayList<>();
     products.add(new Product(1, "Paracetamol", 10.5, "img/Paracetamol.jpg"));
     products.add(new Product(2, "Ibuprofen", 25.0, "img/Ibuprofen.jpeg"));

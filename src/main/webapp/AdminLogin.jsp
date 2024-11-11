@@ -120,7 +120,7 @@
             <p class="fs-4 text-center text-white mt-2">
                 <i class="fa fa-universal-access"></i> Admin Login</p>
             <c:if test="${not empty succmsg }">
-                <p class="text-center text-success fs-3">${succMsg}</p>
+                <p class="text-center text-success fs-3">${succmsg}</p>
                 <c:remove var="succMsg" scope="session" />
             </c:if>
 

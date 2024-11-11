@@ -23,7 +23,7 @@ public class MenuServlet extends HttpServlet {
         List<Product> products = new ArrayList<>();
 
         try (Connection conn = DBUtil.getConnection()) {
-            String sql = "SELECT id, name, price, image_path FROM products"; // Assuming `products` is your table name
+            String sql = "SELECT id, name, price, image_path FROM products";
             try (PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     int id = rs.getInt("id");

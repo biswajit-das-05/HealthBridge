@@ -28,8 +28,7 @@ public class DoctorLogin extends HttpServlet {
         Doctor doctor = dao.login(email, password);
 
         if (doctor != null) {
-            System.out.println("login successful");
-            System.out.println("Doctor object: " + doctor);
+
 
             session.setAttribute("DoctorObj", doctor);
             resp.sendRedirect("doctor/index.jsp");

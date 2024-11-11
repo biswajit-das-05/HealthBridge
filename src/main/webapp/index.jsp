@@ -83,7 +83,7 @@
     <div class="about__content">
         <h2 class="section__header">About Us</h2>
         <p>
-            Welcome to our healthcare website, your one-stop destination for
+            Welcome to our health bridge website, your one-stop destination for
             reliable and comprehensive health care information. We are committed
             to promoting wellness and providing valuable resources to empower you
             on your health journey.
@@ -204,7 +204,7 @@
 <footer class="footer">
     <div class="section__container footer__container">
         <div class="footer__col">
-            <h3>Health<span>Care</span></h3>
+            <h3>Health<span>Bridge</span></h3>
             <p>
                 We are honored to be a part of your healthcare journey and committed
                 to delivering compassionate, personalized, and top-notch care every

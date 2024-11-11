@@ -24,7 +24,6 @@ public class CartServlet extends HttpServlet {
         String action = request.getParameter("action");
         HttpSession session = request.getSession();
 
-        // Adding product to cart
         if ("addToCart".equals(action)) {
             int productId = Integer.parseInt(request.getParameter("productId"));
             List<Product> products = (List<Product>) session.getAttribute("products");

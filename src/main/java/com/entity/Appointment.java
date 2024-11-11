@@ -14,10 +14,7 @@ public class Appointment {
     private String address;
     private String status;
 
-    public Appointment() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
 
     public Appointment(int userId, String fullName, String gender, String age, String appointDate, String email,
                        String phNo, String diseases, int doctorId, String address, String status) {
@@ -33,6 +30,10 @@ public class Appointment {
         this.doctorId = doctorId;
         this.address = address;
         this.status = status;
+    }
+
+    public Appointment() {
+
     }
 
     public int getId() {
