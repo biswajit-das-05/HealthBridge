@@ -2,13 +2,13 @@ package com.dao;
 
 import java.sql.*;
 import com.entity.Order;
-import com.util.DBConnection;
+import com.util.DBUtil;
 
 public class OrderDAO {
 
     public static boolean createOrder(Order order) {
         String sql = "INSERT INTO orders (customer_id, order_date, total_amount, status) VALUES (?, ?, ?, ?)";
-        try (Connection connection = DBConnection.getConnection();
+        try (Connection connection = DBUtil.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, order.getCustomerId());

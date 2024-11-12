@@ -19,6 +19,7 @@ public class SellerLogin extends HttpServlet {
             String email = req.getParameter("email");
             String password = req.getParameter("password");
 
+            // Debugging output
             System.out.println("Email: " + email);
             System.out.println("Password: " + password);
 
@@ -34,8 +35,3 @@ public class SellerLogin extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }}}
-
-
-
-
-

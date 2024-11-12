@@ -114,21 +114,17 @@
 
 </head>
 <body>
-<%@ include file="../navbar.jsp" %>
 <div class="container">
     <div class="card my-card">
         <div class="card-header text-center my-bg-color">
-            <p class="fs-4 text-center text-white mt-2">
                 <i class="fa fa-universal-access"></i> Seller Login
             </p>
 
-            <!-- Display Success Message -->
             <c:if test="${not empty succMsg}">
                 <p class="text-center text-success fs-3">${succMsg}</p>
                 <c:remove var="succMsg" scope="session" />
             </c:if>
 
-            <!-- Display Error Message -->
             <c:if test="${not empty errorMsg}">
                 <p class="text-center text-danger fs-5">${errorMsg}</p>
                 <c:remove var="errorMsg" scope="session" />

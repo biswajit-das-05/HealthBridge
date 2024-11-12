@@ -85,17 +85,7 @@
     Doctor d = (Doctor) session.getAttribute("DoctorObj");
     DoctorDao dao = new DoctorDao(DBConnect.getConn());
 %>
-<%--<c:if test="${ empty DoctorObj }">--%>
-<%--    <c:redirect url="../DoctorLogin.jsp"></c:redirect>--%>
-<%--</c:if>--%>
-<%--<script>--%>
-<%--    function editProfile() {--%>
-<%--        window.location.href = 'edit_doctor_profile.html';--%>
-<%--    }--%>
-<%--    function logout() {--%>
-<%--        window.location.href = '../WEB-INF/Landing_page.html';--%>
-<%--    }--%>
-<%--</script>--%>
+
 <main>
     <div class="dashboard-container">
         <div class="dashboard-box" onclick="redirectTo('doctor.html')">

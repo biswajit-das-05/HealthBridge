@@ -83,7 +83,6 @@
 <body>
 <%@include file ="navbar.jsp" %>
 
-<!-- User Sign Up -->
 <div class="container p-5">
     <div class="row">
         <div class="col-md-4 offset-md-4">
@@ -126,7 +125,6 @@
         </div>
     </div>
 </div>
-<!-- End of User Sign Up -->
 
 </body>
 </html>

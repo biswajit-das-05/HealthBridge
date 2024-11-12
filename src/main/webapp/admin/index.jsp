@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <style>
-        /* Resetting body padding and margin */
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
@@ -15,12 +14,11 @@
             padding: 0;
         }
 
-        /* Container styling */
         .container {
             padding: 20px;
         }
 
-        /* Card styling */
+
         .my-card {
             box-shadow: 0px 0px 10px 1px maroon;
             border-radius: 8px;
@@ -30,27 +28,23 @@
             cursor: pointer;
         }
 
-        /* Consistent height for cards */
         .my-card, .card-body {
             height: 200px;
         }
 
-        /* Hover effect for cards */
         .my-card:hover {
             transform: scale(1.05);
         }
 
-        /* Remove underline from links */
         .card-link {
             text-decoration: none;
-            color: inherit; /* Keeps the text color the same as the surrounding text */
+            color: inherit;
         }
 
         .card-link:hover {
-            color: inherit; /* Prevents color change on hover */
+            color: inherit;
         }
 
-        /* Centering text and icons */
         .card-body {
             padding: 20px;
             display: flex;
@@ -80,13 +74,11 @@
             margin-bottom: 10px;
         }
 
-        /* Button styling */
         .btn {
             cursor: pointer;
         }
 
 
-        /* Remove white line at the top */
         header, .navbar {
             display: none;
         }
@@ -101,7 +93,6 @@
 <%
     DoctorDao dao = new DoctorDao(DBConnect.getConn());
 %>
-<!-- Dashboard Content -->
 <div class="container p-5">
     <p class="text-center text-danger fs-3">Admin Dashboard</p>
     <div class="row">

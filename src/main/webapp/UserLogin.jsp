@@ -117,7 +117,6 @@
   </div>
 </div>
 
-<!-- End of User Login -->
 
 </body>
 </html>

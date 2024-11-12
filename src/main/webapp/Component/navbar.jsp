@@ -99,16 +99,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-<%--        <c:if test="${empty userObj }">--%>
-<%--            <li class="nav-item"><a class="nav-link active" aria-current="page" href="AdminLogin.jsp">--%>
-<%--                <i class="fas fa-sign-in-alt"></i>ADMIN</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link active" aria-current="page"--%>
-<%--                                    href="DoctorLogin.jsp">DOCTOR</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link active" aria-current="page"--%>
-<%--                                    href="../userAppointment.jsp">APPOINTMENT</a></li>--%>
-<%--            <li class="nav-item"><a class="nav-link active" aria-current="page"--%>
-<%--                                    href="UserLogin.jsp">USER</a></li>--%>
-<%--        </c:if>--%>
 
 
 
