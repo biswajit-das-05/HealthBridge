@@ -66,5 +66,4 @@ public class CartServlet extends HttpServlet {
             DBUtil.closeConnection(conn);
         }
     }
-    }
-
+}

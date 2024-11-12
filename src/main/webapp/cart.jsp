@@ -16,7 +16,6 @@
     <meta charset="UTF-8">
     <title>Cart</title>
     <style>
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -100,7 +99,6 @@
     </style>
 
     <script>
-        // AJAX function to remove a product from the cart
         function removeFromCart(productId) {
             var formData = new FormData();
             formData.append("action", "removeItem");
@@ -117,7 +115,6 @@
                 .catch(error => console.error('Error:', error));
         }
 
-        // AJAX function to reset the cart
         function resetCart() {
             var formData = new FormData();
             formData.append("action", "resetCart");

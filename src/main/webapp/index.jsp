@@ -20,6 +20,8 @@
             <li class="link"><a href="AdminLogin.jsp">Admin</a></li>
             <li class="link"><a href="#pages">Pages</a></li>
             <li class="link"><a href="#blog">Blog</a></li>
+            <li class="link"><a href="Seller/SellerLogin.jsp">Seller</a></li>
+
         </ul>
         <button class="btn"><a href="UserLogin.jsp" style="text-decoration: none; color: inherit;">Patient Registration</a></button>
     </nav>

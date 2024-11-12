@@ -10,5 +10,13 @@
 <!--         <url-pattern>/UserRegister</url-pattern>-->
 <!--    </servlet-mapping>-->
 
+  <servlet>
+    <servlet-name>AddProductServlet</servlet-name>
+    <servlet-class>com.seller.servlet.AddProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProductServlet</servlet-name>
+    <url-pattern>/Seller/AddProductServlet</url-pattern>
+  </servlet-mapping>
 
 </web-app>
