@@ -103,8 +103,8 @@
                 </div>
 
                 <div class="card-body">
-              
-                   <form action="user_register" method="post">
+
+                    <form action="${pageContext.request.contextPath}/user_register" method="post">
                      <div class="mb-3">
                              <label class="form-label">Full Name</label>
                              <input name="full_name" type="text" class="form-control" required>
