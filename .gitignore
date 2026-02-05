@@ -1,4 +1,8 @@
-target/
+# Ignore everything in target
+target/*
+
+# BUT allow WAR file for Docker deploy
+!target/*.war
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
