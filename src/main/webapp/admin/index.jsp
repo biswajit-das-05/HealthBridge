@@ -122,6 +122,7 @@
 
         <!-- Patient Section -->
         <div class="col-md-4">
+            <a href="patient.jsp" class="card-link">
                 <div class="card my-card">
                     <div class="card-body text-center text-danger">
                         <i class="fas fa-user-circle fa-3x"></i><br>
@@ -130,6 +131,7 @@
                 </div>
             </a>
         </div>
+
 
         <!-- Appointment Section -->
         <div class="col-md-4">

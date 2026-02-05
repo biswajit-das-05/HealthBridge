@@ -55,9 +55,11 @@
             padding: 20px;
             color: #ffffff;
         }
+
         .text-white {
             background-color: #28a745 !important;
         }
+
         .fs-4 {
             font-size: 1.5rem;
         }

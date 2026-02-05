@@ -106,8 +106,8 @@
             width: 100%;
         }
 
-        button:hover {
-            background-color: #ff0000;
+        .btn:hover {
+            background-color: #0056b3 !important;
         }
     </style>
 
