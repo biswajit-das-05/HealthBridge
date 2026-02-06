@@ -2,9 +2,7 @@ package com.db;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
-@WebListener
 public class DBInit implements ServletContextListener {
 
     @Override

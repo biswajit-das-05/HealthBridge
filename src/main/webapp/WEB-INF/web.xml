@@ -9,20 +9,9 @@
 
   <display-name>HealthBridge</display-name>
 
-  <!-- 🔹 DB INITIALIZATION LISTENER -->
+  <!-- 🔥 DB INIT LISTENER -->
   <listener>
     <listener-class>com.db.DBInit</listener-class>
   </listener>
-
-  <!-- 🔹 ADD PRODUCT SERVLET -->
-  <servlet>
-    <servlet-name>AddProductServlet</servlet-name>
-    <servlet-class>com.seller.servlet.AddProductServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>AddProductServlet</servlet-name>
-    <url-pattern>/Seller/AddProductServlet</url-pattern>
-  </servlet-mapping>
 
 </web-app>
