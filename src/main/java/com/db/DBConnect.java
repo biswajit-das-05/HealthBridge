@@ -17,6 +17,11 @@ public class DBConnect {
 			String user = System.getenv("MYSQLUSER");
 			String password = System.getenv("MYSQLPASSWORD");
 
+			System.out.println("DB HOST = " + host);
+			System.out.println("DB PORT = " + port);
+			System.out.println("DB NAME = " + database);
+			System.out.println("DB USER = " + user);
+
 			String url = "jdbc:mysql://" + host + ":" + port + "/" + database
 					+ "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
