@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>Archetype Created Web Application</display-name>
-<!--  <servlet>-->
-<!--         <servlet-name>UserRegister</servlet-name>-->
-<!--         <servlet-class>com.UserRegister</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--         <servlet-name>UserRegister</servlet-name>-->
-<!--         <url-pattern>/UserRegister</url-pattern>-->
-<!--    </servlet-mapping>-->
+<web-app
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+        version="4.0">
 
+  <display-name>HealthBridge</display-name>
+
+  <!-- 🔹 DB INITIALIZATION LISTENER -->
+  <listener>
+    <listener-class>com.db.DBInit</listener-class>
+  </listener>
+
+  <!-- 🔹 ADD PRODUCT SERVLET -->
   <servlet>
     <servlet-name>AddProductServlet</servlet-name>
     <servlet-class>com.seller.servlet.AddProductServlet</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>AddProductServlet</servlet-name>
     <url-pattern>/Seller/AddProductServlet</url-pattern>
